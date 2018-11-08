@@ -29,7 +29,8 @@ pase the following contents
 https://docs.google.com/document/d/1vAHun95oxFvRzQLtTvMPEXe_zUnt5o_ywUFZERazolA/edit
 
 ### 3. how to run submit-jupyter.sh:
-bsub -Is -gpu "num=2:mode=exclusive_process:mps=yes" bash submit-jupyter.sh
+* (if only CPU): bsub -Is bash submit-jupyter.sh
+* (if GPU is needed) bsub -Is -gpu "num=1:mode=exclusive_process:mps=yes" bash submit-jupyter.sh
 
 ### 4. An ssh tunnel command to skygpu appears in output of the command terminal
 * The command looks like "ssh -N -L {port}:skygpu11:{port} <netid>@skynet.nyumc.org"
